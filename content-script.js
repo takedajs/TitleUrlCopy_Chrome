@@ -6,7 +6,7 @@ window.setInterval(getTitleUrls,1000);
 var checkCopy = "";
 //オプションで設定したコピーする情報を取得
 function getCheckCopy(){
-    browser.storage.local.get('checkCopy', function(res) {
+    chrome.storage.local.get('checkCopy', function(res) {
         checkCopy = res.checkCopy;
     });
 }
@@ -14,7 +14,7 @@ function getCheckCopy(){
 var checkAllTag = "";
 //オプションで設定した全タブ取得有無の情報を取得
 function getCheckAllTag(){
-    browser.storage.local.get('checkAllTag', function(res) {
+    chrome.storage.local.get('checkAllTag', function(res) {
         checkAllTag = res.checkAllTag;
     });
 }
@@ -22,7 +22,7 @@ function getCheckAllTag(){
 var titleUrls = "";
 //全タブのタイトルとURLを取得
 function getTitleUrls() {
-    browser.storage.local.get('titleUrls', function(res) {
+    chrome.storage.local.get('titleUrls', function(res) {
         titleUrls = res.titleUrls;
     });
 }

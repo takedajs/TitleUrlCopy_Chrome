@@ -4,19 +4,19 @@ function setTitleUrls(tabs) {
     for (var i = 0; i < tabs.length; i++){
         titleUrls[i] = {
             "title": tabs[i].title,
-            "url": tabs[i].url,
+            "url": tabs[i].url
         }
     }
 
     //ストレージに保存
-    browser.storage.local.set({
+    chrome.storage.local.set({
         'titleUrls': titleUrls
     });
 }
 
 window.setInterval(
     function(){
-        browser.tabs.query({}).then(setTitleUrls);
+        chrome.tabs.query({},setTitleUrls);
     },
     1000
 );
