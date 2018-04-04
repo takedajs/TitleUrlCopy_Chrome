@@ -12,13 +12,13 @@ document.getElementById("copy").onchange = function(){
     }
 
     //チェックした要素をストレージに格納
-    browser.storage.local.set({
+    chrome.storage.local.set({
         'checkCopy': checkedCopy
     });
 }
 
 //ストレージに格納されている情報をラジオボタンに反映
-browser.storage.local.get('checkCopy', function(res) {
+chrome.storage.local.get('checkCopy', function(res) {
     document.getElementById(res.checkCopy).checked = true;
 });
 
@@ -37,12 +37,12 @@ document.getElementById("allTag").onchange = function(){
     }
 
     //チェックした要素をストレージに格納
-    browser.storage.local.set({
+    chrome.storage.local.set({
         'checkAllTag': checkedAllTag
     });
 }
 
 //ストレージに格納されている情報をラジオボタンに反映
-browser.storage.local.get('checkAllTag', function(res) {
+chrome.storage.local.get('checkAllTag', function(res) {
     document.getElementById(res.checkAllTag).checked = true;
 });
