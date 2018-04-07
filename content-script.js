@@ -63,7 +63,8 @@ document.addEventListener('copy', function(e){
         }
 
         // 全タブ情報取得
-        if (isAllTags && checkAllTag == "allTagOn") {
+        // オプション設定を1度も変更していない場合、checkAllTagがundefinedになる
+        if (isAllTags && (checkAllTag == "allTagOn" || typeof checkAllTag === "undefined") ) {
             var setData = "";
             if (checkCopy == "urlOnly") {
                 for (var i = 0; i < titleUrls.length; i++) {
