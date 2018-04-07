@@ -1,15 +1,14 @@
 
 chrome.storage.local.get('checkCopy', function(res) {
     document.getElementById(res.checkCopy).checked = true;
-    setCheckCopy();
 });
 
 
 //ストレージに格納されている情報をラジオボタンに反映
 chrome.storage.local.get('checkAllTag', function(res) {
     document.getElementById(res.checkAllTag).checked = true;
-    setCheckAllTag();
 });
+
 
 document.getElementById("copy").onchange = setCheckCopy;
 document.getElementById("allTag").onchange = setCheckAllTag;
