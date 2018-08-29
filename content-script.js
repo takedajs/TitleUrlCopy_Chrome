@@ -74,6 +74,13 @@ document.addEventListener('copy', function(e){
                 for (var i = 0; i < titleUrls.length; i++) {
                     setData += titleUrls[i].title + new_line_word;
                 }
+            } else if (checkCopy == "markdown1") { // マークダウン形式 e.g. [Title](https://example.com "Title")
+                // @link https://qiita.com/Qiita/items/c686397e4a0f4f11683d#links---%E3%83%AA%E3%83%B3%E3%82%AF
+                // 「リンクテキスト」と「リンクタイトル」の設定を増やす可能性を考慮してmarkdown "1" としています。
+                for (var i = 0; i < titleUrls.length; i++) {
+                    // setData += '[' + titleUrls[i].title + '](' + titleUrls[i].url + '"' + titleUrls[i].title +'")' + new_line_word;
+                    setData += '[' + titleUrls[i].title + '](' + titleUrls[i].url + ')';
+                }
             } else {
                 for (var i = 0; i < titleUrls.length; i++) {
                     setData += titleUrls[i].title + new_line_word + titleUrls[i].url + new_line_word + new_line_word;
@@ -91,6 +98,9 @@ document.addEventListener('copy', function(e){
                 e.clipboardData.setData("text/plain", document.URL);
             } else if (checkCopy == "titleOnly") {
                 e.clipboardData.setData("text/plain", document.title);
+            } else if (checkCopy == "markdown1") { // マークダウン形式
+                var the_str = '[' + document.title + '](' + document.URL + ' "' + document.title + '")' + new_line_word;
+                e.clipboardData.setData("text/plain", the_str+'c');
             } else {
                 e.clipboardData.setData("text/plain", document.title + new_line_word + document.URL);
             }
