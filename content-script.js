@@ -99,8 +99,8 @@ document.addEventListener('copy', function(e){
             } else if (checkCopy == "titleOnly") {
                 e.clipboardData.setData("text/plain", document.title);
             } else if (checkCopy == "markdown1") { // マークダウン形式
-                var the_str = '[' + document.title + '](' + document.URL + ' "' + document.title + '")' + new_line_word;
-                e.clipboardData.setData("text/plain", the_str+'c');
+                var the_str = '[' + document.title + '](' + document.URL + ' "' + document.title + '")';
+                e.clipboardData.setData("text/plain", the_str);
             } else {
                 e.clipboardData.setData("text/plain", document.title + new_line_word + document.URL);
             }
