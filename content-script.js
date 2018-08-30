@@ -78,8 +78,7 @@ document.addEventListener('copy', function(e){
                 // @link https://qiita.com/Qiita/items/c686397e4a0f4f11683d#links---%E3%83%AA%E3%83%B3%E3%82%AF
                 // 「リンクテキスト」と「リンクタイトル」の設定を増やす可能性を考慮してmarkdown "1" としています。
                 for (var i = 0; i < titleUrls.length; i++) {
-                    // setData += '[' + titleUrls[i].title + '](' + titleUrls[i].url + '"' + titleUrls[i].title +'")' + new_line_word;
-                    setData += '[' + titleUrls[i].title + '](' + titleUrls[i].url + ')';
+                    setData += '[' + titleUrls[i].title + '](' + titleUrls[i].url + '"' + titleUrls[i].title +'")' + new_line_word + new_line_word;
                 }
             } else {
                 for (var i = 0; i < titleUrls.length; i++) {
